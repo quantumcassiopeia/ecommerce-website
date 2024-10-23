@@ -4,6 +4,7 @@ import * as S from "./styles";
 import { useDispatch, useSelector } from "react-redux";
 import { RootReducer, rootReducer } from "../../redux/root-reducer";
 import { products } from "../../data/products";
+import { AiFillDelete } from "react-icons/ai";
 
 interface CartProps {
   showCart: boolean;
@@ -28,13 +29,13 @@ export const Cart: React.FC<CartProps> = ({ showCart }) => {
         {cart.map((product) => (
           <S.CartProductItem key={product.id}>
             <strong>{product.title}</strong> - {product.price}
-            <button
+            <S.CartDeleteItem
               onClick={() =>
                 dispatch({ type: "cart/remove-product", payload: product })
               }
             >
-              Remover
-            </button>
+              <AiFillDelete />
+            </S.CartDeleteItem>
           </S.CartProductItem>
         ))}
       </S.CartProductsList>

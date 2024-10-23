@@ -32,4 +32,16 @@ export const CartProductsList = styled.ul`
 
 export const CartProductItem = styled.li``;
 
+export const CartDeleteItem = styled.button`
+  border: none;
+  background: none;
+
+  margin-left: 10px;
+  padding: 0.01rem 0.3rem;
+
+  font-size: 1rem;
+
+  cursor: pointer;
+`;
+
 export const CartTotal = styled.strong``;
